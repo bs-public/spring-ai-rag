@@ -18,7 +18,9 @@ public class IngestionController {
     this.ingestionService = ingestionService;
   }
 
-  @PostMapping(value = "/ingest", consumes = MediaType.APPLICATION_JSON_VALUE,
+  @PostMapping(
+      value = "/ingest",
+      consumes = MediaType.APPLICATION_JSON_VALUE,
       produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<IngestResponse> ingest(@RequestBody IngestRequest request) {
     ingestionService.ingest(request.getContent());

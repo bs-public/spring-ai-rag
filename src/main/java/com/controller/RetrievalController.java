@@ -9,13 +9,13 @@ import com.service.RetrieverService;
 
 @RestController
 public class RetrievalController {
-  
+
   private final RetrieverService retrieverService;
-  
+
   public RetrievalController(RetrieverService retrieverService) {
     this.retrieverService = retrieverService;
   }
-  
+
   @GetMapping("/retrieve")
   public List<Document> retrieve(@RequestParam("q") String q) {
     return retrieverService.retrieve(q);
